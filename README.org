@@ -22,9 +22,3 @@ minor mode eglot-codelens-mode.
 
 - eglot-codelens-execute-current-lens :: Inspect the current overlays at point and attempt to execute it.
 - eglot-codelens-mode :: Toggle the minor mode for displaying Code Lenses with eglot. 
-
-#+begin_src C++ :includes <iostream>  :namespaces std
-  int main {
-    return 10;
-  }
-#+end_src

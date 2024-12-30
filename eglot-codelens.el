@@ -1,7 +1,7 @@
 ;; eglot-codelens.el --- Add support for codelenses to eglot -*- lexical-binding: t -*-
 
 ;; Author: Gavin Freeborn <Gavinfreeborn@gmail.com>
-;; URL: https://example.com/package-name.el
+;; URL: https://github.com/Gavinok/eglot-codelens
 ;; Version: 0.1
 ;; Package-Requires: ((emacs "29.0"))
 ;; Keywords: eglot
@@ -169,10 +169,11 @@
                  command)
   (eglot-codelens-force-refresh-lens))
 
-(cl-defmethod eglot-handle-request
-  (_server (_method (eql workspace/codeLens/refresh))
-           &key &allow-other-keys)
-  (eglot-codelens-force-refresh-lens))
+;; TODO for some reason defining this method causes purescript lsp to crash
+;; (cl-defmethod eglot-handle-request
+;;   (_server (_method (eql workspace/codeLens/refresh))
+;;            &key &allow-other-keys)
+;;   (eglot-codelens-force-refresh-lens))
 
 (define-minor-mode eglot-codelens-mode
   "Minor mode for displaying Code Lenses with Eglot."
